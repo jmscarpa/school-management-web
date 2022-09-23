@@ -2,6 +2,6 @@
   <a [routerLink]="['/cursos', course.id, 'detalhes']">
     <h4>{{course.name}}</h4>
   </a>
-  <span>{{course.students}} alunos</span>
+  <span>{{course.students.length}} alunos</span>
   <p>{{course.description}}</p>
 </div>

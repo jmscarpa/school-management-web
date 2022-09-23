@@ -6,9 +6,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { CoursesIndexComponent } from './pages/courses-index/courses-index.component';
 import { CoursesShowComponent } from './pages/courses-show/courses-show.component';
 
+import { AuthGuard } from './guards/auth.guard';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'cursos', component: CoursesIndexComponent },
+  {
+    path: 'cursos',
+    component: CoursesIndexComponent,
+    canActivate: [AuthGuard],
+  },
   { path: 'cursos/:id/detalhes', component: CoursesShowComponent },
 ];
 

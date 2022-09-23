@@ -2,5 +2,10 @@ export interface CourseModel {
   id: number;
   name: string;
   description: string;
-  students: number;
+  students: Student[];
+}
+
+interface Student {
+  id: number;
+  name: string;
 }
