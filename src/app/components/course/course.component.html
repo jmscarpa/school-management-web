@@ -1,7 +1,11 @@
-<div style="border: 1px solid black; margin-bottom: 1em;">
-  <a [routerLink]="['/cursos', course.id, 'detalhes']">
-    <h4>{{course.name}}</h4>
-  </a>
-  <span>{{course.students.length}} alunos</span>
-  <p>{{course.description}}</p>
+<div class="card">
+  <div class="card-header">
+    <a [routerLink]="['/cursos', course.id, 'detalhes']">
+      <h4>{{course.name}}</h4>
+    </a>
+  </div>
+  <div class="card-body">
+    <span>{{course.students.length}} alunos</span>
+    <p>{{course.description}}</p>
+  </div>
 </div>
