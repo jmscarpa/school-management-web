@@ -5,6 +5,7 @@ export const dataset: CourseModel[] = [
     id: 1,
     name: 'Jiu Jitsu',
     description: 'Luta Brasileira',
+    price: 120.0,
     students: [
       { id: 1, name: 'Aluno 1' },
       { id: 2, name: 'Aluno 2' },
@@ -15,6 +16,7 @@ export const dataset: CourseModel[] = [
     id: 2,
     name: 'Karatê',
     description: 'Luta japonesa',
+    price: 120.0,
     students: [
       { id: 2, name: 'Aluno 2' },
       { id: 4, name: 'Aluno 4' },
@@ -26,6 +28,7 @@ export const dataset: CourseModel[] = [
     id: 3,
     name: 'Krav Maga',
     description: 'Luta Israelênse',
+    price: 120.0,
     students: [
       { id: 7, name: 'Aluno 7' },
       { id: 8, name: 'Aluno 8' },

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -11,6 +11,9 @@ import { CoursesIndexComponent } from './pages/courses-index/courses-index.compo
 import { CoursesShowComponent } from './pages/courses-show/courses-show.component';
 
 import { CourseComponent } from './components/course/course.component';
+import { LayoutComponent } from 'src/app/pages/layout/layout.component';
+
+import { UpcasePipe } from './pipes/upcase.pipe';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,8 @@ import { CourseComponent } from './components/course/course.component';
     CoursesIndexComponent,
     CourseComponent,
     CoursesShowComponent,
+    LayoutComponent,
+    UpcasePipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

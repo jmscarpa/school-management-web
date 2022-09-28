@@ -7,4 +7,5 @@ import { CourseModel } from '../../models/course.model';
 })
 export class CourseComponent {
   @Input() course!: CourseModel;
+  public date: Date = new Date();
 }

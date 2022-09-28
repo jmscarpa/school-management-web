@@ -3,6 +3,7 @@ export interface CourseModel {
   name: string;
   description: string;
   students: Student[];
+  price: number;
 }
 
 interface Student {

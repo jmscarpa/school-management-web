@@ -1,11 +1,14 @@
 <div class="card">
   <div class="card-header">
-    <a [routerLink]="['/cursos', course.id, 'detalhes']">
-      <h4>{{course.name}}</h4>
+    <a [routerLink]="['/dashboard/cursos', course.id, 'detalhes']">
+      <h4>{{course.name | upcase}}</h4>
     </a>
   </div>
   <div class="card-body">
     <span>{{course.students.length}} alunos</span>
     <p>{{course.description}}</p>
+    <div class="text-dark">
+      {{course.price | currency }}
+    </div>
   </div>
 </div>
