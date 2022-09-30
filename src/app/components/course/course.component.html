@@ -1,14 +1,20 @@
 <div class="card">
-  <div class="card-header">
+  <img
+    src="https://newhorizon-bsh.s3.ap-south-1.amazonaws.com/nhengineering/bsh/wp-content/uploads/2020/01/17113522/default_image_01.png"
+    class="card-img-top" alt="">
+  <div class="card-body">
     <a [routerLink]="['/dashboard/cursos', course.id, 'detalhes']">
-      <h4>{{course.name | upcase}}</h4>
+      <h5 class="card-title">{{course.title | upcase}}</h5>
     </a>
   </div>
-  <div class="card-body">
-    <span>{{course.students.length}} alunos</span>
-    <p>{{course.description}}</p>
-    <div class="text-dark">
-      {{course.price | currency }}
-    </div>
-  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <i class="fa-solid fa-users"></i>
+      1 alunos
+    </li>
+    <li class="list-group-item">
+      <i class="fa-solid fa-money-bill"></i>
+      {{100 | currency}}
+    </li>
+  </ul>
 </div>

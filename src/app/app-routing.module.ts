@@ -8,6 +8,7 @@ import { CoursesIndexComponent } from './pages/courses-index/courses-index.compo
 import { CoursesShowComponent } from './pages/courses-show/courses-show.component';
 
 import { AuthGuard } from './guards/auth.guard';
+import { CoursesNewComponent } from 'src/app/pages/courses-new/courses-new.component';
 
 // NÃO ESTAR LOGADO:
 // meusite.com => HomeComponent
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'cursos',
         component: CoursesIndexComponent,
+      },
+      {
+        path: 'cursos/novo',
+        component: CoursesNewComponent
       },
       {
         path: 'cursos/:id/detalhes',

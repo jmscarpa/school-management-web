@@ -1,0 +1,26 @@
+<a [routerLink]="['/dashboard/cursos']">Voltar</a>
+
+<h1>Novo Curso</h1>
+
+<form (ngSubmit)="save()" [formGroup]="form">
+  <div class="mb-3">
+    <label for="title" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="title" formControlName="title" placeholder="Nome do curso">
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Descrição</label>
+    <textarea class="form-control" id="description" formControlName="description" rows="3"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="price" class="form-label">Preço</label>
+    <input type="number" class="form-control" id="price" formControlName="price">
+  </div>
+  <div class="mb-3">
+    <button type="submit" class="btn btn-primary">Salvar</button>
+  </div>
+</form>
+
+<hr>
+<pre>
+  {{form.value | json}}
+</pre>

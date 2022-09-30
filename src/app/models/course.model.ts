@@ -1,9 +1,7 @@
 export interface CourseModel {
   id: number;
-  name: string;
-  description: string;
-  students: Student[];
-  price: number;
+  title: string;
+  description?: string;
 }
 
 interface Student {
