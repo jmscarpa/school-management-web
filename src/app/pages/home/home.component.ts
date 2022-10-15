@@ -10,8 +10,11 @@ export class HomeComponent {
   constructor(private authService: AuthService) {}
 
   public form: FormGroup = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required]),
+    email: new FormControl('joao.scarpa@gmail.com', [
+      Validators.required,
+      Validators.email,
+    ]),
+    password: new FormControl('123456', [Validators.required]),
   });
 
   public login(): void {

@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card h-100">
   <img
     src="https://newhorizon-bsh.s3.ap-south-1.amazonaws.com/nhengineering/bsh/wp-content/uploads/2020/01/17113522/default_image_01.png"
     class="card-img-top" alt="">
@@ -10,11 +10,11 @@
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
       <i class="fa-solid fa-users"></i>
-      1 alunos
+      {{ course.students_count }} alunos
     </li>
     <li class="list-group-item">
       <i class="fa-solid fa-money-bill"></i>
-      {{100 | currency}}
+      {{course.price | currency}}
     </li>
   </ul>
 </div>
