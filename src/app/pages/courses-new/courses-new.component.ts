@@ -1,10 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { environment } from '../../../environments/environment';
-
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
 
 interface SuccessModel {}
 
@@ -14,7 +12,7 @@ interface SuccessModel {}
   styleUrls: ['./courses-new.component.scss'],
 })
 export class CoursesNewComponent {
-  constructor(private httpClient: HttpClient, private router: Router) {}
+  constructor(private apiService: ApiService, private router: Router) {}
 
   public form: FormGroup = new FormGroup({
     title: new FormControl('', [Validators.required]),
@@ -24,16 +22,10 @@ export class CoursesNewComponent {
   });
 
   public save(): void {
-    const url: string = `${environment.apiUrl}/courses/`;
-
-    this.httpClient
-      .post<SuccessModel>(url, this.form.value)
-      .toPromise()
-      .then((_) => {
-        this.router.navigateByUrl('/dashboard/cursos');
-      })
-      .catch((response) => {
-        alert(response.error.error);
-      });
+    this.apiService.post<SuccessModel>('courses', this.form.value).then((_) => {
+      this.router.navigateByUrl('/dashboard/cursos');
+    }).catch((response) => {
+      alert(response.error.error);
+    });
   }
 }

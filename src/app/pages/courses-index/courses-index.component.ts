@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseModel } from '../../models/course.model';
-import { environment } from '../../../environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-courses-index',
   templateUrl: './courses-index.component.html',
 })
 export class CoursesIndexComponent implements OnInit {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private apiService: ApiService) {}
 
   public courses: CourseModel[] = [];
 
@@ -16,14 +15,10 @@ export class CoursesIndexComponent implements OnInit {
     this.loadCourses();
   }
 
-  public loadCourses(): void {
-    const url: string = `${environment.apiUrl}/courses`;
-
-    this.httpClient
-      .get<CourseModel[]>(url)
-      .toPromise()
-      .then((data) => {
-        this.courses = data;
-      });
+  public loadCourses(): void { 
+    this.apiService.get<CourseModel[]>('courses').then( data => {
+      this.courses = data;
+    })
   }
+
 }
