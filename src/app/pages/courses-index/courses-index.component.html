@@ -3,7 +3,13 @@
   <a class="btn btn-primary" [routerLink]="['/dashboard/cursos/novo']">Novo Curso</a>
 </div>
 
-<div class="row d-flex align-items-stretch">
+<div class="text-center" *ngIf="loading">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+<div class="row d-flex align-items-stretch" *ngIf="!loading">
   <div class="col-12 col-md-3 mb-4" *ngFor="let course of courses">
     <app-course [course]="course"></app-course>
   </div>

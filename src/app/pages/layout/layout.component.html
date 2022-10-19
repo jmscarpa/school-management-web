@@ -18,9 +18,13 @@
           <a class="nav-link" role="button" (click)="logout()" *ngIf="isLoggedIn">Logout</a>
         </li>
       </ul>
-      <span class="navbar-text">
-        {{currentUser}}
-      </span>
+      <div class="d-flex align-items-center">
+        <img [src]="currentUser.picture_url" class="profile-picture" alt="">
+        <span class="navbar-text">
+          {{currentUser.name}}
+          <small class="d-block">{{currentUser.email}}</small>
+        </span>
+      </div>
     </div>
   </div>
 </nav>

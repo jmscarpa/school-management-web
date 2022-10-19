@@ -32,9 +32,10 @@ export class CoursesShowComponent implements OnInit {
       .then( _ => {
         // Se a a API retornar status 200..299
         this.router.navigateByUrl('/dashboard/cursos');
-      }).catch( error => {
+      }).catch( response => {
+        alert(response.error.error)
         // Se a API retornar status 400..599
-      }).finally( _ => {
+      }).finally( () => {
         // Tanto faz o que a API responder
       });
     }
